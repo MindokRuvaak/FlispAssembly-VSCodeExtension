@@ -1,0 +1,34 @@
+{
+    "name": "flisp-assembly",
+    "displayName": "FLISP-Assembly",
+    "description": "Extension to handle syntax highlighting when writing Assembly code for FLIS-Processors",
+    "version": "0.0.1",
+    "publisher": "MindokRuvaak",
+    "repository": "https://github.com/MindokRuvaak/FlispAssembly-VSCodeExtension",
+    "engines": {
+        "vscode": "^1.51.0"
+    },
+    "categories": [
+        "Programming Languages",
+        "Testing"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "flispAssembly",
+                "extensions": [
+                    ".sflisp"
+                ],
+                "aliases": [
+                    "FLISP",
+                    "flisp"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ]
+    },
+    "dependencies": {
+        "@types/vscode": "^1.84.2"
+    },
+    "type": "module"
+}

@@ -12,7 +12,7 @@
 	"surroundingPairs": [
 		["[", "]"]
 	],
-	"wordPattern": "(^\\$[0-9A-F][0-9A-F]$|^[A-Z]+:?$)",
+	"wordPattern": "(^\\$[0-9A-F][0-9A-F]$|^[A-Z]+:?$)"
 	//"indentationRules": {
 	//	"increaseIndentPattern": "^((?!.*?\\/\\*).*\\*\/)?\\s*[\\}\\]].*$",
 	//	"decreaseIndentPattern": "^((?!\\/\\/).)*(\\{[^}\"'`]*|\\([^)\"'`]*|\\[[^\\]\"'`]*)$"

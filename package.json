@@ -12,6 +12,10 @@
         "Programming Languages",
         "Testing"
     ],
+    "activationEvents": [
+        "onLanguage:flispAssembly",
+        "workspaceContains:**/*.sflisp"
+    ],
     "contributes": {
         "languages": [
             {
@@ -23,12 +27,29 @@
                     "FLISP",
                     "flisp"
                 ],
-                "configuration": "./language-configuration.json"
+                "configuration": "./syntax/flispAssembly-language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "flispAssembly",
+                "scopeName": "source.sflisp",
+                "path": "./syntax/flispAssembly.json"
+            }
+        ],
+        "colors": [
+            {
+                "id": "flispAssembly.closingLabels",
+                "description": "The color of the 'closing label' annotations shown against constructor, method invocations and lists that span multiple lines. If not supplied, the color for 'tab.inactiveForeground' will be used.",
+                "defaults": {
+                    "dark": "tab.inactiveForeground",
+                    "light": "tab.inactiveForeground",
+                    "highContrast": "tab.inactiveForeground"
+                }
             }
         ]
     },
     "dependencies": {
         "@types/vscode": "^1.84.2"
-    },
-    "type": "module"
+    }
 }

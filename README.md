@@ -1,4 +1,4 @@
-# FlispAssembly-VSCodeExtension
+# flisp-assembly
 Creating a VSCode extension for writing assembly code for FLIS-Processors. 
 
 I don't like the DigiFlisp program and would rather write the .sflisp, .fmem and .fcs files in text files than use the DigiFlisp tools. However this project will only concern the .sflisp files.  

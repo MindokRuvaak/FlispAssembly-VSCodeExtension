@@ -1,55 +1,73 @@
 {
-    "name": "flisp-assembly",
-    "displayName": "FLISP-Assembly",
-    "description": "Extension to handle syntax highlighting when writing Assembly code for FLIS-Processors",
-    "version": "0.0.1",
-    "publisher": "MindokRuvaak",
-    "repository": "https://github.com/MindokRuvaak/FlispAssembly-VSCodeExtension",
-    "engines": {
-        "vscode": "^1.51.0"
-    },
-    "categories": [
-        "Programming Languages",
-        "Testing"
-    ],
-    "activationEvents": [
-        "onLanguage:flispAssembly",
-        "workspaceContains:**/*.sflisp"
-    ],
-    "contributes": {
-        "languages": [
-            {
-                "id": "flispAssembly",
-                "extensions": [
-                    ".sflisp"
-                ],
-                "aliases": [
-                    "FLISP",
-                    "flisp"
-                ],
-                "configuration": "./syntax/flispAssembly-language-configuration.json"
-            }
+  "name": "flisp-assembly",
+  "displayName": "FlispAssembly",
+  "description": "Extension to handle syntax highlighting when writing Assembly code for FLIS-Processors",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "workspaceContains:**/*.sflisp"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "flispAssembly",
+        "extensions": [
+          ".sflisp"
         ],
-        "grammars": [
-            {
-                "language": "flispAssembly",
-                "scopeName": "source.sflisp",
-                "path": "./syntax/flispAssembly.json"
-            }
+        "aliases": [
+          "FLISP",
+          "flisp"
         ],
-        "colors": [
-            {
-                "id": "flispAssembly.closingLabels",
-                "description": "The color of the 'closing label' annotations shown against constructor, method invocations and lists that span multiple lines. If not supplied, the color for 'tab.inactiveForeground' will be used.",
-                "defaults": {
-                    "dark": "tab.inactiveForeground",
-                    "light": "tab.inactiveForeground",
-                    "highContrast": "tab.inactiveForeground"
-                }
-            }
-        ]
-    },
-    "dependencies": {
-        "@types/vscode": "^1.84.2"
-    }
+        "configuration": "./syntax/flispAssembly-language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "flispAssembly",
+        "scopeName": "source.sflisp",
+        "path": "./syntax/flispAssembly.json"
+      }
+    ],
+    "colors": [
+      {
+        "id": "flispAssembly.closingLabels",
+        "description": "The color of the 'closing label' annotations shown against constructor, method invocations and lists that span multiple lines. If not supplied, the color for 'tab.inactiveForeground' will be used.",
+        "defaults": {
+          "dark": "tab.inactiveForeground",
+          "light": "tab.inactiveForeground",
+          "highContrast": "tab.inactiveForeground"
+        }
+      }
+    ],
+    "commands": [
+      {
+        "command": "flisp-assembly.helloWorld",
+        "title": "Hello World"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^6.13.1",
+    "@typescript-eslint/parser": "^6.13.1",
+    "eslint": "^8.54.0",
+    "typescript": "^5.3.2",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.8"
+  }
 }

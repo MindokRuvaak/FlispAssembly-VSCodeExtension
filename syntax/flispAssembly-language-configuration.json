@@ -1,20 +1,41 @@
 {
-	"comments": {
-		"lineComment": ";"
-	},
-	"brackets": [
-		["[", "]"]
-	],
-	"autoClosingPairs": [
-		{ "open": "[", "close": "]" },
-	],
-	"autoCloseBefore": "] \n\t",
-	"surroundingPairs": [
-		["[", "]"]
-	],
-	"wordPattern": "(^\\$[0-9A-F][0-9A-F]$|^[A-Z]+:?$)"
-	//"indentationRules": {
-	//	"increaseIndentPattern": "^((?!.*?\\/\\*).*\\*\/)?\\s*[\\}\\]].*$",
-	//	"decreaseIndentPattern": "^((?!\\/\\/).)*(\\{[^}\"'`]*|\\([^)\"'`]*|\\[[^\\]\"'`]*)$"
-	//}
+    "scopeName": "source.sflisp",
+    "patterns": [
+        {
+            "include": "#expression"
+        }
+    ],
+    "repository": {
+        "expression": {
+            "patterns": [
+                {
+                    "include": "#letter"
+                },
+                {
+                    "include": "#paren-expression"
+                }
+            ]
+        },
+        "comments": {
+            "lineComment": ";" //|(;.*)
+        },
+        "autoClosingPairs": [
+            {
+                "open": "[",
+                "close": "]"
+            },
+        ],
+        "autoCloseBefore": "] \n\t",
+        "surroundingPairs": [
+            [
+                "[",
+                "]"
+            ]
+        ],
+        "wordPattern": "(?<=\\s|^)((#?\\$[0-9A-F]{2})|([A-Z]{3,5}(\\s[ACXYS],[ACXYS])?)|(#?%[01]+)|([a-z_]+:?)|(#?[0-9]+))(?=\\s|$)",
+        "indentationRules": {
+            "increaseIndentPattern": "^[^;].*:.*"/*,
+            "decreaseIndentPattern": ""*/
+        }
+    }
 }

@@ -1,4 +1,9 @@
 # flisp-assembly
+Archiving repository. I have learnt alot about creating VS-Code extensions and realized it's better to resart with what i learnt. 
+New repository will be under /flisp-assembly-lang
+
+
+
 Creating a VSCode extension for writing assembly code for FLIS-Processors. 
 
 I don't like the DigiFlisp program and would rather write the .sflisp, .fmem and .fcs files in text files than use the DigiFlisp tools. However this project will only concern the .sflisp files.  
